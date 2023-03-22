@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This task is designed to test your Angular skills in creating and managing a dashboard for order management. The tasks in this assessment will challenge you to create functional components, implement services to handle API requests, and use modules to manage the application.
+This task is designed to test your Angular skills in creating a dashboard for customer management. The tasks in this assessment will challenge you to create functional components, implement services to handle API requests, and implement a strategy to make a search feature more efficient.
 
-As an intermediate Angular developer, you are expected to have a good understanding of the fundamentals of Angular and be able to create moderately complex applications. You should be comfortable working with components, services, and modules, and have solid knowledge of how to handle data in an application.
+As an intermediate Angular developer, you are expected to have a good understanding of the fundamentals of Angular. You should be comfortable working with components, APIs, forms, and have solid knowledge of how to handle data efficiently in an application.
 
 The assessment includes seven tasks that build on each other and should take approximately 90 minutes to complete. We ask that you limit your total working time to 90 minutes for this assessment. We encourage you to submit your assessment regardless of if you completed every question or not.
 
@@ -22,13 +22,12 @@ eg GET to `http://localhost:3004/customers` fetches all customers. While DELETE 
 
 ## Task steps
 
-1. Create a new module called **`DashboardModule`**. This module should include a new component called **`DashboardComponent`**. The **`DashboardComponent`** should display a dashboard view that includes a chart showing the total revenue for each month of the current year. Use the mocked **`orders`** data provided in the boilerplate.
-2. Extend the **`DashboardComponent`** created in task 1 to include a summary view that displays the total revenue and number of orders for the current month.
-3. Create a new component called **`OrderListComponent`**. This component should display a list of orders, including their ID, customer name, order date, and total price. Use the mocked **`orders`** data provided in the boilerplate.
-4. Extend the **`OrderListComponent`** created in task 3 to allow users to filter the list of orders by customer name and order date. Add input fields to the component that allow users to enter a search query and date range, and update the list of orders to show only those whose customer name matches the query and whose order date falls within the specified range.
-5. Create a new module called **`AdminModule`**. This module should include a new component called **`AdminComponent`**. The **`AdminComponent`** should display a view that allows users to edit the details of a specific order, including the customer name, order date, and items. Use the mocked **`orders`** data provided in the boilerplate.
-6. Add form validation to the **`AdminComponent`** to ensure that the user enters valid values when updating an order's details, including customer name, order date, and items.
-7. Discussion: The current implementation of the **`OrderListComponent`** uses a simple filter function to filter the list of orders. Suggest and discuss any improvements or changes you could make to improve the performance and scalability of the filtering function. Explain your reasoning for your proposed changes.  You can add your discussion in your Pull Request as comments
+1. Implement **`CustomerService`** methods for getting a list of customers, getting the details of a specific customer, updating a customer's details, adding a new customer and deleting an existing customer. Use the HttpClient service to make the relevant HTTP requests to the mocked API. Make sure that your mock API is running (i.e. with `json-server --watch db.json --port 3004`).
+2. Create a new component called **`CustomerListComponent`**. This component should display a list of customers, including their name and email address. Use the mocked customer data API to display the list of customers in the component.
+3. Create a new component called **`CustomerFormComponent`**. This component should allow users to add a new customer with their name and email address. Use reactive forms to implement the form and validation. After submitting the form, add the new customer to the list in the **`CustomerListComponent`**.
+4. Extend the **`CustomerListComponent`** created in the previous question to allow users to filter the list of customers by name. Add an input field to the component that allows users to enter a search query, and update the list of customers to show only those whose name matches the query.
+5. Implement a mechanism for the search feature you added to the **`CustomerListComponent`** that you believe would improve the performance this feature. (eg. batch buffer, caching, debounce time, rate limiting)
+
 
 ## How to Submit
 
